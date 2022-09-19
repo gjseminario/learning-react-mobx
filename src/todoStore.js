@@ -3,7 +3,7 @@ import { makeObservable, observable, computed, action, autorun } from "mobx"
 export default class TodoStore {
   todos = [];
 
-  construct() {
+  constructor() {
     makeObservable(this, {
       todos: observable,
       report: computed,
