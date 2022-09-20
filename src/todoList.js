@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { observer } from "mobx-react";
 import TodoItem from './todoItem';
 
@@ -6,7 +5,7 @@ const TodoList = observer(({ store }) => {
 
   const onNewTodo = () => {
     store.addTodo(prompt('Enter a new todo:', 'coffee plz'));
-    console.log(store.todos);
+    console.log("Reaction -> todoList updated after adding a new todoItem: ", store.todos.map(todo => todo.task));
   }
  
   return (

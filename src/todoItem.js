@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { observer } from "mobx-react";
 
 const TodoItem = observer(({ todo }) => {
@@ -13,6 +12,7 @@ const TodoItem = observer(({ todo }) => {
       <input
         type='checkbox'
         checked={todo.completed}
+        onChange={() => {}}
       />
       {todo.task}
     </li>

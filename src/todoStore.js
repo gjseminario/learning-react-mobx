@@ -21,7 +21,7 @@ export default class TodoStore {
   }
 
   addTodo(task) {
-    console.log("TodoStore -> add");
+    console.log("Action -> adding a new todoItem to the todoStore");
     this.todos.push({
       task: task,
       completed: false
