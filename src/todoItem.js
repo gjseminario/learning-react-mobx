@@ -3,25 +3,18 @@ import { observer } from "mobx-react";
 
 const TodoItem = observer(({ todo }) => {
 
-  const [todoItem, setTodoItem] = useState(todo);
-
-  const onToggleCompleted = () => {
-    setTodoItem({ ...todoItem, completed: !todoItem.completed });
-  }
-
   const onRename = () => {
-    const task = prompt('Task name', todoItem.task) || todoItem.task;
-    setTodoItem({ ...todoItem, task });
+    const task = prompt('Task name', todo.task) || todo.task;
+    todo.task = task;
   }
 
   return (
     <li onDoubleClick={onRename}>
       <input
         type='checkbox'
-        checked={todoItem.completed}
-        onChange={onToggleCompleted}
+        checked={todo.completed}
       />
-      {todoItem.task}
+      {todo.task}
     </li>
   );
 });
