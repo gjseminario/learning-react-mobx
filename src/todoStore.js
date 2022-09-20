@@ -6,10 +6,16 @@ export default class TodoStore {
   constructor() {
     makeObservable(this, {
       todos: observable,
-      report: computed,
-      addTodo: action
+      report: computed, // check if needed
+      addTodo: action // check if needed
     });
     autorun(() => console.log(this.report));
+  }
+
+  get completedTodosCount() {
+    return this.todos.filter(
+        todo => todo.completed === true
+    ).length;
   }
 
   get report() {
@@ -17,7 +23,7 @@ export default class TodoStore {
       return "<none>";
     const nextTodo = this.todos.find(todo => todo.completed === false);
     return `Next todo: "${nextTodo ? nextTodo.task : "<none>"}". ` +
-      `Progress: 0/${this.todos.length}`;
+      `Progress: ${this.completedTodosCount}/${this.todos.length}`;
   }
 
   addTodo(task) {
@@ -26,5 +32,9 @@ export default class TodoStore {
       task: task,
       completed: false
     });
+  }
+
+  removeTodo(todo) {
+    this.todos = this.todos.filter(todoItem => todoItem !== todo);
   }
 }

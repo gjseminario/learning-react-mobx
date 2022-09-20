@@ -11,7 +11,7 @@ export default function App() {
   return (
     <main>
       SMS Learning Time: React + MobX
-      <TodoList store={todoStore}></TodoList>
+      <TodoList store={todoStore} ></TodoList>
     </main>
   )
 }

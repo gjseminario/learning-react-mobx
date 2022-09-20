@@ -7,12 +7,16 @@ const TodoItem = observer(({ todo }) => {
     todo.task = task;
   }
 
+  const onChange = () => {
+    todo.completed = !todo.completed;
+  }
+
   return (
     <li onDoubleClick={onRename}>
       <input
         type='checkbox'
         checked={todo.completed}
-        onChange={() => {}}
+        onChange={onChange}
       />
       {todo.task}
     </li>
