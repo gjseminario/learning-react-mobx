@@ -27,7 +27,7 @@ export default class TodoStore {
   }
 
   addTodo(task) {
-    console.log("Action -> adding a new todoItem to the todoStore");
+    console.log("Action -> adding a new todoItem to the todoList");
     this.todos.push({
       task: task,
       completed: false
@@ -35,6 +35,7 @@ export default class TodoStore {
   }
 
   removeTodo(todo) {
+    console.log("Action -> removing a new todoItem to the todoList");
     this.todos = this.todos.filter(todoItem => todoItem !== todo);
   }
 }
