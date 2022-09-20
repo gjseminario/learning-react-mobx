@@ -8,6 +8,8 @@ In the project directory, you can run:
 
 ### `npm install`
 
+Downloads all packages defined in package.json file and their dependencies, in a node_modules folder.
+
 ### `npm start`
 
 Runs the app in the development mode.\
